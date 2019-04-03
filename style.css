@@ -76,7 +76,8 @@ body {
     top: 5%;
     left: 7.5%;
 }
-.front, .back {
+.allmight-weak, .allmight, .deku, .deku-training, .endeavor,
+.ochaco, .shota, .shota-glasses, .todoroki, .tsuyu, .back {
     position: absolute;
     top: 0;
     left: 0;
@@ -86,12 +87,57 @@ body {
     -moz-border-radius: 10px;
     border-radius: 10px;
 }
-
-.front {
+.allmight {
+    background: url('images/pop_allmight.jpg') no-repeat center center;
+    background-color: white;
+    background-size: contain;
+}
+.allmight-weak {
     background: url('images/pop_allmight_weak.jpg') no-repeat center center;
     background-color: white;
     background-size: contain;
 }
+.deku {
+    background: url('images/pop_deku.jpg') no-repeat center center;
+    background-color: white;
+    background-size: contain;
+}
+.deku-training {
+    background: url('images/pop_deku_training.jpg') no-repeat center center;
+    background-color: white;
+    background-size: contain;
+}
+.endeavor {
+    background: url('images/pop_endeavor.jpg') no-repeat center center;
+    background-color: white;
+    background-size: contain;
+}
+.ochaco {
+    background: url('images/pop_ochaco.jpg') no-repeat center center;
+    background-color: white;
+    background-size: contain;
+}
+.shota {
+    background: url('images/pop_shota.jpg') no-repeat center center;
+    background-color: white;
+    background-size: contain;
+}
+.shota-glasses {
+    background: url('images/pop_shota_glasses.jpg') no-repeat center center;
+    background-color: white;
+    background-size: contain;
+}
+.todoroki {
+    background: url('images/pop_todoroki.jpg') no-repeat center center;
+    background-color: white;
+    background-size: contain;
+}
+.tsuyu {
+    background: url('images/pop_tsuyu.jpg') no-repeat center center;
+    background-color: white;
+    background-size: contain;
+}
+
 .inside-border {
     position: relative;
     top: 2.5%;
@@ -108,10 +154,10 @@ body {
     /*background-color: #262c3a;*/
     /*background-size: 50% 20%;*/
 /*}*/
-.back {
-    background: url('images/cardback_maybe_trans.png') #262c3a no-repeat center center;
-    background-size: cover;
-}
+/*.back {*/
+    /*background: url('images/cardback_maybe_trans.png') #262c3a no-repeat center center;*/
+    /*background-size: cover;*/
+/*}*/
 .card:hover .back {
     display:none;
 }
