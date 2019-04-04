@@ -4,6 +4,7 @@
 }
 body {
     background: #e8e280;
+    margin: 0;
 }
 
 .header {
@@ -17,15 +18,15 @@ body {
     font-size: 1rem;
 }
 .logo {
-    width: 25%;
+    width: 35%;
     /*background-color: yellow;*/
 }
 .logo img {
     height: 100%;
-    width: 100%;
+    width: 90%;
 }
 .title {
-    width: 75%;
+    width: 65%;
     background-color: yellow;
 }
 .title h1 {
@@ -102,8 +103,8 @@ body {
     background-color: white;
     background-size: contain;
 }
-.deku-training {
-    background: url('images/pop_deku_training.jpg') no-repeat center center;
+.katsuki {
+    background: url('images/pop_katsuki.png') no-repeat center center;
     background-color: white;
     background-size: contain;
 }
@@ -154,13 +155,13 @@ body {
     /*background-color: #262c3a;*/
     /*background-size: 50% 20%;*/
 /*}*/
-/*.back {*/
-    /*background: url('images/cardback_maybe_trans.png') #262c3a no-repeat center center;*/
-    /*background-size: cover;*/
-/*}*/
-.card:hover .back {
-    display:none;
+.back {
+    background: url('images/cardback_maybe_trans.png') #262c3a no-repeat center center;
+    background-size: cover;
 }
+/*.card:hover .back {*/
+    /*display:none;*/
+/*}*/
 .back-img {
     height: 35%;
     width: 20%;

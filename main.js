@@ -3,6 +3,10 @@ $(document).ready(startApp);
 function startApp(){
     var dynamicArea = $('.game-area');
 
+    dynamicArea.on('click', '.card', function(event){
+    $(event.currentTarget.lastChild).toggleClass('back');
+    
+    });
     dealCards(dynamicArea);
 }
 
@@ -28,8 +32,8 @@ function dealCards(gameBoard) {
         imgSrc: 'images/pop_deku.jpg',
         amount: 0
     }, {
-        name: 'deku-training',
-        imgSrc: 'images/pop_deku_training.jpg',
+        name: 'katsuki',
+        imgSrc: 'images/pop_katsuki.png',
         amount: 0
     }, {
         name: 'endeavor',
@@ -81,3 +85,4 @@ function randomize(array){
     var randomNum = Math.floor(Math.random() * array.length);
     return randomNum;
 }
+
