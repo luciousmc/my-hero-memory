@@ -77,6 +77,7 @@ body {
     height: 90%;
     top: 5%;
     left: 7.5%;
+    transition: .2s
 }
 .allmight-weak, .allmight, .deku, .deku-training, .endeavor,
 .ochaco, .shota, .shota-glasses, .todoroki, .tsuyu, .back {
@@ -165,6 +166,7 @@ body {
 }
 .card:hover {
     cursor: pointer;
+    transform: scale(1.1);
 }
 .back-img {
     height: 35%;

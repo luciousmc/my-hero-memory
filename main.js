@@ -46,6 +46,7 @@ function startApp(){
             if (firstCard.attr('class') === secondCard.attr('class')){
                 triggerMatch(firstCard, secondCard);
             } else {
+                dynamicArea.off('click', '.back');
                 var prevCard = $('.first');
 
                 setTimeout(function () {
@@ -53,6 +54,7 @@ function startApp(){
                     prevCard.toggleClass('back').removeClass('first');
                     firstCard = null;
                     secondCard = null;
+                    // dynamicArea.on('click', '.back');
                 }, 1000);
             }
         }
@@ -78,7 +80,7 @@ function triggerMatch(first, second){
     firstCard = null;
     secondCard = null;
     matchedCards += 1;
-
+    updateAccuracy();
     if (matchedCards === 9){
 
     }
@@ -98,17 +100,18 @@ function updateAttempt(){
     if (clicks < 2){
         attemptBox.text(0);
     }
-    var attempts = Math.round(clicks / 2);
+    attempts = Math.round(clicks / 2);
     attemptBox.text(attempts)
 }
 function updateAccuracy(){
     var accuracyBox =  $('.accuracyNum');
 
     if (matchedCards < 1){
-       accuracyBox.text(0 + '%');
+       accuracyBox.text(accuracy + '%');
+    } else {
+        accuracy = Math.floor((matchedCards / attempts) * 100);
+        accuracyBox.text(accuracy + '%');
     }
-    var accuracy = (matchedCards / attempts) * 100;
-    accuracyBox.text(accuracy + '%');
 }
 
 function createCard(name){
@@ -124,19 +127,19 @@ function createCard(name){
 }
 
 function resetGame(gameBoard){
+    var container = $('.card-container');
+
     clicks = 0;
     attempts = 0;
-    $('.attemptNum').text(0);
+    updateAttempt();
     matchedCards = 0;
-    accuracy = 0 + '%';
-
-    var container = $('.card-container');
+    accuracy = 0;
+    updateAccuracy();
 
     container.remove();
     dealCards(gameBoard);
 }
 function dealCards(gameBoard) {
-
     var deck = [{
         name: 'allmight',
         imgSrc: 'images/pop_allmight.jpg',
