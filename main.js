@@ -26,19 +26,23 @@ function startApp(){
 
     // RESET BUTTON CLICK HANDLER
     $('button.reset').on('click', function(){
-        updateGameNumber();
         resetGame(dynamicArea);
     });
 
     // CARD CLICK HANDLER
     dynamicArea.on('click', '.card', function(event){
+        if (clickEnabled === false){
+            return;
+        }
         updateClicks();
         updateAttempt();
         var cardBack = $(event.currentTarget.lastChild);
+        var cardCheck = $(event.currentTarget.firstChild);
 
         if (firstCard === null){
             cardBack.toggleClass('back').addClass('first');
             firstCard = $(event.currentTarget.firstChild);
+
         } else {
             cardBack.toggleClass('back');
             secondCard = $(event.currentTarget.firstChild);
@@ -46,7 +50,7 @@ function startApp(){
             if (firstCard.attr('class') === secondCard.attr('class')){
                 triggerMatch(firstCard, secondCard);
             } else {
-                dynamicArea.off('click', '.back');
+                clickEnabled = false;
                 var prevCard = $('.first');
 
                 setTimeout(function () {
@@ -54,7 +58,7 @@ function startApp(){
                     prevCard.toggleClass('back').removeClass('first');
                     firstCard = null;
                     secondCard = null;
-                    // dynamicArea.on('click', '.back');
+                    clickEnabled = true;
                 }, 1000);
             }
         }
@@ -63,9 +67,10 @@ function startApp(){
     updateAttempt();
     updateAccuracy();
 }
-
+var statsObj = {};
 var firstCard = null;
 var secondCard = null;
+var clickEnabled = true;
 
 //STATS
 var gamesPlayed = 0;
@@ -74,6 +79,10 @@ var attempts = 0;
 var matchedCards = 0;
 var accuracy = 0;
 
+
+function stopClick(){
+    return false;
+}
 function triggerMatch(first, second){
     firstCard.addClass('matched').on('click', function(){ return false });
     secondCard.addClass('matched').on('click', function(){ return false });
@@ -128,7 +137,13 @@ function createCard(name){
 
 function resetGame(gameBoard){
     var container = $('.card-container');
+    updateGameNumber();
 
+    statsObj['game ' + gamesPlayed] = {
+        attempts: attempts,
+        accuracy: accuracy + '%',
+        matched: matchedCards
+    };
     clicks = 0;
     attempts = 0;
     updateAttempt();

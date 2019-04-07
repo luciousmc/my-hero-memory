@@ -168,17 +168,31 @@ body {
     cursor: pointer;
     transform: scale(1.1);
 }
-.back-img {
-    height: 35%;
-    width: 20%;
+.back-img, .back-img-info {
     position: absolute;
-    background: url('images/deku_tsuyu_trans.png') no-repeat;
-    background-size: cover;
     opacity: .65;
+}
+.back-img {
+    height: 70%;
+    width: 20%;
+    /*background: url('images/deku_tsuyu_trans.png') no-repeat;*/
+    background-size: cover;
+    background: url('images/background2_allmightrans.png') no-repeat;
     right: 0;
-    bottom: 2%;
+    bottom: 0;
     z-index: -1;
 }
+.back-img-info {
+    background: url('images/background2_katsuki_trans.png') no-repeat top right;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 35%;
+    width: 22%;
+    left: 0;
+    bottom: 0;
+    z-index: -2;
+}
+
 .game-info {
     font-family: commando, arial, sans;
     padding-top: 5%;
@@ -192,15 +206,7 @@ body {
     text-align: center;
     margin-bottom: 10%;
 }
-.games-played {
 
-}
-.attempts {
-
-}
-.accuracy {
-
-}
 .attemptNum, .playedNum, .accuracyNum {
     font-size: 2.3rem;
     background-color: #262c3a;
