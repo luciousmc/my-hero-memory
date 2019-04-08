@@ -12,6 +12,23 @@ body {
     height: 20vh;
     background-color: brown;
 }
+.menu {
+    text-align: right;
+    position: absolute;
+    right: 10%;
+    top: 2%;
+}
+.menu a {
+    font-family: arial;
+    font-size: 1.2rem;
+    color: white;
+    position: relative;
+    text-decoration: none;
+}
+.menu a:hover {
+    color: yellow;
+    text-decoration: underline;
+}
 .logo, .title {
     display:inline-block;
     height: 100%;
@@ -19,7 +36,6 @@ body {
 }
 .logo {
     width: 35%;
-    /*background-color: yellow;*/
 }
 .logo img {
     height: 100%;
@@ -38,7 +54,6 @@ body {
 .game-area-container {
     font-size: 0;
     height: 80vh;
-    /*background-color: orange;*/
 }
 
 .game-info, .game-container {
@@ -48,22 +63,18 @@ body {
 }
 .game-info {
     width: 20%;
-    /*background-color: lightgrey;*/
     vertical-align: top;
     height: 75%
 }
 .game-container {
     width: 80%;
     height: 100%;
-    /*background-color: turquoise;*/
 }
 .game-area {
     position: relative;
     top: 5%;
-    /*margin: auto;*/
     width: 80%;
     height: 90%;
-    /*background-color: darkgreen;*/
 }
 .card-container {
     /*background-color: purple;*/
@@ -79,8 +90,8 @@ body {
     left: 7.5%;
     transition: .2s
 }
-.allmight-weak, .allmight, .deku, .deku-training, .endeavor,
-.ochaco, .shota, .shota-glasses, .todoroki, .tsuyu, .back {
+.allmight-weak, .allmight, .deku, .allmight-weak, .endeavor,
+.ochaco, .shota, .shota-glasses, .todoroki, .tsuyu, .katsuki, .back {
     position: absolute;
     top: 0;
     left: 0;
@@ -91,54 +102,34 @@ body {
     border-radius: 10px;
 }
 .allmight {
-    background: url('images/pop_allmight.jpg') no-repeat center center;
-    background-color: white;
-    background-size: contain;
+    background: url('images/pop_allmight.jpg') #fff no-repeat center/contain;
 }
 .allmight-weak {
-    background: url('images/pop_allmight_weak.jpg') no-repeat center center;
-    background-color: white;
-    background-size: contain;
+    background: url('images/pop_allmight_weak.jpg') #fff no-repeat center/contain;
 }
 .deku {
-    background: url('images/pop_deku.jpg') no-repeat center center;
-    background-color: white;
-    background-size: contain;
+    background: url('images/pop_deku.jpg') #fff no-repeat center/contain;
 }
 .katsuki {
-    background: url('images/pop_katsuki.png') no-repeat center center;
-    background-color: white;
-    background-size: contain;
+    background: url('images/pop_katsuki.png') #fff no-repeat center/contain;
 }
 .endeavor {
-    background: url('images/pop_endeavor.jpg') no-repeat center center;
-    background-color: white;
-    background-size: contain;
+    background: url('images/pop_endeavor.jpg') #fff no-repeat center/contain;
 }
 .ochaco {
-    background: url('images/pop_ochaco.jpg') no-repeat center center;
-    background-color: white;
-    background-size: contain;
+    background: url('images/pop_ochaco.jpg') #fff no-repeat center/contain;
 }
 .shota {
-    background: url('images/pop_shota.jpg') no-repeat center center;
-    background-color: white;
-    background-size: contain;
+    background: url('images/pop_shota.jpg') #fff no-repeat center/contain;
 }
 .shota-glasses {
-    background: url('images/pop_shota_glasses.jpg') no-repeat center center;
-    background-color: white;
-    background-size: contain;
+    background: url('images/pop_shota_glasses.jpg') #fff no-repeat center/contain;
 }
 .todoroki {
-    background: url('images/pop_todoroki.jpg') no-repeat center center;
-    background-color: white;
-    background-size: contain;
+    background: url('images/pop_todoroki.jpg') #fff no-repeat center/contain;
 }
 .tsuyu {
-    background: url('images/pop_tsuyu.jpg') no-repeat center center;
-    background-color: white;
-    background-size: contain;
+    background: url('images/pop_tsuyu.jpg') #fff no-repeat center/contain;
 }
 
 .inside-border {
@@ -152,11 +143,7 @@ body {
     -moz-border-radius: 10px;
     border-radius: 10px;
 }
-/*.back {*/
-    /*background: url('images/cardback_2.jpg') no-repeat center center;*/
-    /*background-color: #262c3a;*/
-    /*background-size: 50% 20%;*/
-/*}*/
+
 .back {
     background: url('images/cardback_maybe_trans.png') #262c3a no-repeat center center;
     background-size: cover;
@@ -175,7 +162,6 @@ body {
 .back-img {
     height: 70%;
     width: 20%;
-    /*background: url('images/deku_tsuyu_trans.png') no-repeat;*/
     background-size: cover;
     background: url('images/background2_allmightrans.png') no-repeat;
     right: 0;
@@ -228,4 +214,38 @@ button.reset {
     -webkit-box-shadow: 10px 5px 5px 10px maroon;
     -moz-box-shadow: 10px 5px 5px 10px maroon;
     box-shadow: 0 5px 5px 8px maroon;
+}
+
+.about-section {
+    font-size: 1rem;
+    margin: auto;
+    width: 50%;
+    height: 80%;
+    font-family: sans-serif;
+    position: relative;
+    top: 15%;
+    text-align: center;
+}
+.about-section h1 {
+    font-size: 3rem;
+}
+.about-section img {
+    width: 30%;
+    height 30%;
+
+}
+.about-section p {
+    width: 60%;
+    text-align: justify;
+    margin: 25px auto;
+}
+.back-img-deku {
+    position: absolute;
+    opacity: .6;
+    height: 35%;
+    width: 20%;
+    background: url('images/deku_tsuyu_trans.png') no-repeat;
+    background-size: cover;
+    right: 0;
+    bottom: 0;
 }

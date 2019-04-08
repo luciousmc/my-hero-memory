@@ -34,16 +34,19 @@ function startApp(){
         if (clickEnabled === false){
             return;
         }
-        updateClicks();
-        updateAttempt();
         var cardBack = $(event.currentTarget.lastChild);
-        var cardCheck = $(event.currentTarget.firstChild);
 
         if (firstCard === null){
+            updateClicks();
             cardBack.toggleClass('back').addClass('first');
             firstCard = $(event.currentTarget.firstChild);
 
         } else {
+            if (cardBack.hasClass('first')) {
+                return;
+            }
+            updateClicks();
+            updateAttempt();
             cardBack.toggleClass('back');
             secondCard = $(event.currentTarget.firstChild);
 
@@ -79,10 +82,6 @@ var attempts = 0;
 var matchedCards = 0;
 var accuracy = 0;
 
-
-function stopClick(){
-    return false;
-}
 function triggerMatch(first, second){
     firstCard.addClass('matched').on('click', function(){ return false });
     secondCard.addClass('matched').on('click', function(){ return false });
