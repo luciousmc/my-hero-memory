@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Match</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <nav class="menu">
+            <a href="about.html">About the game</a>
+        </nav>
+        <div class="logo">
+            <img src="images/logo_maybe_trans.png" alt="">
+        </div>
+        <div class="title">
+            <h1>Memory Match Game</h1>
+        </div>
+    </div>
+    <div class="game-area-container">
+        <div class="game-info">
+            <div class="games-played">
+                <div class="label">Games Played</div>
+                <div class="value"></div>
+            </div>
+            <div class="attempts">
+                <div class="label">Attempts</div>
+                <div class="value"></div>
+            </div>
+            <div class="accuracy">
+                <div class="label">Accuracy</div>
+                <div class="value"></div>
+            </div>
+            <button class="reset">Reset Game</button>
+        </div>
+        <div class="game-container">
+            <div class="game-area"></div>
+        </div>
+    </div>
+    <div class="back-img-info"></div>
+    <div class="back-img"></div>
+
+    <!--MODAL ON  WIN-->
+    <div id="winModal" class="modal">
+        <div class="modal-content">
+            <div class="close-modal"></div>
+
+        </div>
+    </div>
+    <!--END MODAL ON WIN-->
+</body>
+</html>
