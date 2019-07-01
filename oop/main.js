@@ -1,4 +1,4 @@
-$(doument).ready(startApp);
+$(document).ready(startApp);
 
 function startApp(){
     const domElements = {
@@ -6,13 +6,17 @@ function startApp(){
         attemptsDiv: $('.attempts'),
         playedDiv: $('.games-played'),
         accuracyDiv: $('.accuracy'),
-        pAttempts = $('<p>').addClass('attemptNum'),
-        pPlayed = $('<p>').addClass('playedNum'),
-        pAccuracy = $('<p>').addClass('accuracyNum')
+        pAttempts: $('<p>').addClass('attemptNum'),
+        pPlayed: $('<p>').addClass('playedNum'),
+        pAccuracy: $('<p>').addClass('accuracyNum')
     }
     //Initiate new game and fill stats
     const Game = new MemoryMatch( domElements );
    
     Game.dealCards(domElements.dynamicArea);
+    
+    Game.updateAttempt();
+    Game.updateAccuracy();
     Game.addCardClickHandler();
+    Game.addResetButtonClickHandler();
 }

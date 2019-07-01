@@ -10,18 +10,35 @@ class MemoryMatch {
     this.attempts = 0;
     this.matchedCards = 0;
     this.accuracy = 0;
+
+    //append games played counter
+    this.domElements.pPlayed.text(this.gamesPlayed);
+    this.domElements.playedDiv.append(this.domElements.pPlayed);
+
+    //append attempts counter
+    this.domElements.pAttempts.text(this.attempts);
+    this.domElements.attemptsDiv.append(this.domElements.pAttempts);
+
+    //append accuracy percentage counter
+    this.domElements.pAccuracy.text(this.accuracy);
+    this.domElements.accuracyDiv.append(this.domElements.pAccuracy);
+    }
+    addResetButtonClickHandler(){
+        $('button.reset').on('click', ()=>{
+            this.resetGame(this.domElements.dynamicArea);
+        });
     }
     addCardClickHandler(){
-        this.domElements.dynamicArea.on('click', '.card', function(event){
+        this.domElements.dynamicArea.on('click', '.card', (event)=>{
             if (this.clickEnabled === false){
                 return;
             }
             let cardBack = $(event.currentTarget.lastChild);
     
-            if (firstCard === null){
+            if (this.firstCard === null){
                 this.updateClicks();
                 cardBack.toggleClass('back').addClass('first');
-                firstCard = $(event.currentTarget.firstChild);
+                this.firstCard = $(event.currentTarget.firstChild);
             } else {
                 if (cardBack.hasClass('first')) {
                     return;
@@ -29,15 +46,15 @@ class MemoryMatch {
                 this.updateClicks();
                 this.updateAttempt();
                 cardBack.toggleClass('back');
-                secondCard = $(event.currentTarget.firstChild);
+                this.secondCard = $(event.currentTarget.firstChild);
     
-                if (firstCard.attr('class') === secondCard.attr('class')){
-                    this.triggerMatch(firstCard, secondCard);
+                if (this.firstCard.attr('class') === this.secondCard.attr('class')){
+                    this.triggerMatch(this.firstCard, this.secondCard);
                 } else {
                     this.clickEnabled = false;
                     let prevCard = $('.first');
     
-                    setTimeout(function () {
+                    setTimeout( ()=> {
                         cardBack.toggleClass('back');
                         prevCard.toggleClass('back').removeClass('first');
                         this.firstCard = null;
@@ -48,7 +65,21 @@ class MemoryMatch {
             }
         })
     }
+    randomize(array){
+        const randomNum = Math.floor(Math.random() * array.length);
+        return randomNum;
+    }
+    createCard(name){
+        let cardContainer = $('<div>').addClass('card-container');
+        let card = $('<div>').addClass('card');
+        let face = $('<div>').addClass(name);
+        let back = $('<div>').addClass('back');
     
+        card.append(face).append(back);
+        cardContainer.append(card);
+    
+        return cardContainer;
+    }
     dealCards(gameBoard) {
         const deck = [{
             name: 'allmight',
@@ -92,7 +123,7 @@ class MemoryMatch {
         let cards = 0;
     
         while (cards < 18){
-            var randomIndex = randomize(deck);
+            var randomIndex = this.randomize(deck);
             var charName = deck[randomIndex].name;
             var count = deck[randomIndex].amount;
     
@@ -100,7 +131,7 @@ class MemoryMatch {
                 newArray.push(charName);
                 deck[randomIndex].amount += 1;
     
-                var newCard = createCard(charName);
+                var newCard = this.createCard(charName);
                 gameBoard.append(newCard);
                 cards++;
             }
@@ -111,37 +142,37 @@ class MemoryMatch {
         let playedBox =  $('.playedNum');
     
         this.gamesPlayed++;
-        playedBox.text(gamesPlayed);
+        playedBox.text(this.gamesPlayed);
     }
     updateClicks(){
         this.clicks += 1;
     }
     updateAttempt(){
-        var attemptBox = $('.attemptNum');
+        let attemptBox = $('.attemptNum');
         if (this.clicks < 2){
             attemptBox.text(0);
         }
-        attempts = Math.round(clicks / 2);
-        attemptBox.text(attempts)
+        this.attempts = Math.round(this.clicks / 2);
+        attemptBox.text(this.attempts)
     }
     updateAccuracy(){
         let accuracyBox =  $('.accuracyNum');
     
         if (this.matchedCards < 1){
-            accuracyBox.text(accuracy + '%');
+            accuracyBox.text(this.accuracy + '%');
         } else {
-            accuracy = Math.floor((matchedCards / attempts) * 100);
-            accuracyBox.text(accuracy + '%');
+            this.accuracy = Math.floor((this.matchedCards / this.attempts) * 100);
+            accuracyBox.text(this.accuracy + '%');
         }
     }
     resetGame(gameBoard){
         let container = $('.card-container');
         this.updateGameNumber();
     
-        this.statsObj['game ' + gamesPlayed] = {
-            attempts: attempts,
-            accuracy: accuracy + '%',
-            matched: matchedCards
+        this.statsObj['game ' + this.gamesPlayed] = {
+            attempts: this.attempts,
+            accuracy: this.accuracy + '%',
+            matched: this.matchedCards
         };
         this.clicks = 0;
         this.attempts = 0;
