@@ -251,6 +251,7 @@ button.reset {
 }
 .modal {
     /* display: none; */
+    color: white;
     height: 100%;
     width: 100%;
     position: fixed;
@@ -262,16 +263,29 @@ button.reset {
 .modal-body {
     height: 60%;
     width: 50%;
+    padding: 15px;
     background:#0b634d;
-    border: 1px solid black;
+    border: 5px solid whitesmoke;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.close-modal {
+    font-size: 1.5rem;
+    font-family: arial;
+    position: absolute;
+    right: 2%;
+    padding: 5px 8px;
+    border: 1px solid white;
+}
+    .close-modal:hover {
+        cursor: pointer;
+        background: white;
+        color: black;
+    }
 .modal-text {
     font-size: 3rem;
     font-family: verdana;
-    color: white;
     text-align: center;
 }

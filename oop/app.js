@@ -1,7 +1,7 @@
 class MemoryMatch {
     constructor( elementsObj ){
     this.domElements = elementsObj;
-    this.deck = [{
+    this.charData = [{
         name: 'allmight',
         imgSrc: 'images/pop_allmight.jpg',
         amount: 0
@@ -127,68 +127,15 @@ class MemoryMatch {
     
         return cardContainer;
     }
-    dealCards(gameBoard) {
-        const deck = [{
-            name: 'allmight',
-            imgSrc: 'images/pop_allmight.jpg',
-            amount: 0
-        }, {
-            name: 'deku',
-            imgSrc: 'images/pop_deku.jpg',
-            amount: 0
-        }, {
-            name: 'katsuki',
-            imgSrc: 'images/pop_katsuki.png',
-            amount: 0
-        }, {
-            name: 'endeavor',
-            imgSrc: 'images/pop_endeavor',
-            amount: 0
-        }, {
-            name: 'ochaco',
-            imgSrc: 'images/pop_ochaco.jpg',
-            amount: 0
-        }, {
-            name: 'allmight-weak',
-            imgSrc: 'images/pop_allmight_weak.jpg',
-            amount: 0
-        }, {
-            name: 'shota-glasses',
-            imgSrc: 'images/pop_shota_glasses.jpg',
-            amount: 0
-        }, {
-            name: 'todoroki',
-            imgSrc: 'images/pop_todoroki.jpg',
-            amount: 0
-        }, {
-            name: 'tsuyu',
-            imgSrc: 'images/pop_tsuyu',
-            amount: 0
-        }];
-    
-        const newArray = [];
-        let cards = 0;
-    
-        while (cards < 18){
-            var randomIndex = this.randomize(deck);
-            var charName = deck[randomIndex].name;
-            var count = deck[randomIndex].amount;
-    
-            if (deck[randomIndex].amount < 2) {
-                newArray.push(charName);
-                deck[randomIndex].amount += 1;
-    
-                var newCard = this.createCard(charName);
-                gameBoard.append(newCard);
-                cards++;
-            }
+    dealCards(gameBoard){
+        let gameDeck = [...this.charData, ...this.charData];
+        
+        for (let char = gameDeck.length - 1; char >= 0; char--){
+            let randomIndex = this.randomize(gameDeck);
+            let charCard = gameDeck.splice(randomIndex, 1);
+            let newCard = this.createCard(charCard[0].name);
+            gameBoard.append(newCard);
         }
-        return newArray;
-    }
-    dealCards2(gameBoard){
-        let randomIndex = this.randomize(this.deck);
-
-
     }
     updateGameNumber(){
         let playedBox =  $('.playedNum');
