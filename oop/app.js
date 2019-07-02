@@ -1,6 +1,43 @@
 class MemoryMatch {
     constructor( elementsObj ){
     this.domElements = elementsObj;
+    this.deck = [{
+        name: 'allmight',
+        imgSrc: 'images/pop_allmight.jpg',
+        amount: 0
+    }, {
+        name: 'deku',
+        imgSrc: 'images/pop_deku.jpg',
+        amount: 0
+    }, {
+        name: 'katsuki',
+        imgSrc: 'images/pop_katsuki.png',
+        amount: 0
+    }, {
+        name: 'endeavor',
+        imgSrc: 'images/pop_endeavor',
+        amount: 0
+    }, {
+        name: 'ochaco',
+        imgSrc: 'images/pop_ochaco.jpg',
+        amount: 0
+    }, {
+        name: 'allmight-weak',
+        imgSrc: 'images/pop_allmight_weak.jpg',
+        amount: 0
+    }, {
+        name: 'shota-glasses',
+        imgSrc: 'images/pop_shota_glasses.jpg',
+        amount: 0
+    }, {
+        name: 'todoroki',
+        imgSrc: 'images/pop_todoroki.jpg',
+        amount: 0
+    }, {
+        name: 'tsuyu',
+        imgSrc: 'images/pop_tsuyu',
+        amount: 0
+    }];
     this.statsObj = {};
     this.firstCard = null;
     this.secondCard = null;
@@ -23,9 +60,19 @@ class MemoryMatch {
     this.domElements.pAccuracy.text(this.accuracy);
     this.domElements.accuracyDiv.append(this.domElements.pAccuracy);
     }
+    addEventHandlers(){
+        this.addResetButtonClickHandler();
+        this.addCardClickHandler();
+        this.addModalCloseHandler();
+    }
     addResetButtonClickHandler(){
         $('button.reset').on('click', ()=>{
             this.resetGame(this.domElements.dynamicArea);
+        });
+    }
+    addModalCloseHandler(){
+        $('.close-modal').on('click', ()=>{
+            $('#winModal').fadeOut(300);
         });
     }
     addCardClickHandler(){
@@ -138,6 +185,11 @@ class MemoryMatch {
         }
         return newArray;
     }
+    dealCards2(gameBoard){
+        let randomIndex = this.randomize(this.deck);
+
+
+    }
     updateGameNumber(){
         let playedBox =  $('.playedNum');
     
@@ -184,6 +236,9 @@ class MemoryMatch {
         container.remove();
         this.dealCards(this.domElements.dynamicArea);
     }
+    displayWinModal(){
+        $('#winModal').fadeIn();
+    }
     triggerMatch(first, second){
         this.firstCard.addClass('matched').on('click', function(){ return false });
         this.secondCard.addClass('matched').on('click', function(){ return false });
@@ -192,7 +247,7 @@ class MemoryMatch {
         this.matchedCards += 1;
         this.updateAccuracy();
         if (this.matchedCards === 9){
-
+            this.displayWinModal();
         }
     }
 }

@@ -17,6 +17,5 @@ function startApp(){
     
     Game.updateAttempt();
     Game.updateAccuracy();
-    Game.addCardClickHandler();
-    Game.addResetButtonClickHandler();
+    Game.addEventHandlers();
 }
