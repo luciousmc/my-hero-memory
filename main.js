@@ -1,6 +1,9 @@
+$(window).resize(responsiveLayout);
+
 $(document).ready(startApp);
 
 function startApp(){
+    responsiveLayout();
     const domElements = {
         dynamicArea: $('.game-area'),
         attemptsDiv: $('.attempts'),
@@ -17,4 +20,12 @@ function startApp(){
     Game.updateAttempt();
     Game.updateAccuracy();
     Game.addEventHandlers();
+}
+function responsiveLayout(){
+    if ($(window).width() < 1000){
+        $('.game-info').insertAfter('.game-container');
+    }
+    else {
+        $('.game-container').insertAfter('.game-info');
+    }
 }
