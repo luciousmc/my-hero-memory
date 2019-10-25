@@ -8,6 +8,7 @@ body {
 }
 
 .header {
+    white-space: nowrap;
     font-size: 0;
     height: 20vh;
     background-color: brown;
@@ -31,24 +32,26 @@ body {
 }
 .logo, .title {
     display:inline-block;
-    height: 100%;
     font-size: 1rem;
 }
 .logo {
     width: 35%;
 }
 .logo img {
-    height: 100%;
-    width: 90%;
+    display: block;
+    width: 30vw;
+    margin: auto;
 }
 .title {
+    position: relative;
+    top: 40%;
+    vertical-align: top;
     width: 65%;
     background-color: yellow;
 }
 .title h1 {
     font-family: commando, arial, sans;
-    width: 100%;
-    font-size: 5em;
+    font-size: 3.5rem;
     text-align: center;
 }
 .game-area-container {
@@ -64,20 +67,25 @@ body {
 .game-info {
     width: 20%;
     vertical-align: top;
-    height: 75%
+    height: 75%;
+    font-family: commando, arial, sans;
+    padding-top: 5%;
+    padding-left: 1%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
 }
 .game-container {
+    padding-top: 3%;
     width: 80%;
-    height: 100%;
+    height: 95%;
 }
 .game-area {
-    position: relative;
-    top: 5%;
     width: 80%;
+    margin: auto;
     height: 90%;
 }
 .card-container {
-    /*background-color: purple;*/
     width: 16.66%;
     height: 33.33%;
     float:left;
@@ -178,17 +186,8 @@ body {
     bottom: 0;
     z-index: -2;
 }
-
-.game-info {
-    font-family: commando, arial, sans;
-    padding-top: 5%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-
-}
 .games-played, .attempts, .accuracy {
-    font-size: 2.8rem;
+    font-size: 5vh;
     text-align: center;
     margin-bottom: 10%;
 }
@@ -199,16 +198,24 @@ body {
     color: yellow;
     text-shadow: 5px 1px 1px gray;
     margin: auto;
-    width: 25%;
+    width: 30%;
     padding: 10px 2px 5px 2px;
     border: 1px solid white;
 }
 button.reset {
+    background-color: #a52a2a;
+    border: 2px solid black;
+    color: #e6e44a;
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     width: 50%;
     margin: auto;
     padding: 8px;
+}
+button.reset:hover {
+    cursor: pointer;
+    color: whitesmoke;
+    background-color: #f77676
 }
 .matched {
     -webkit-box-shadow: 10px 5px 5px 10px maroon;
@@ -219,7 +226,7 @@ button.reset {
 .about-section {
     font-size: 1rem;
     margin: auto;
-    width: 50%;
+    width: 65%;
     height: 80%;
     font-family: sans-serif;
     position: relative;
@@ -250,7 +257,7 @@ button.reset {
     bottom: 0;
 }
 .modal {
-    /* display: none; */
+    display: none;
     color: white;
     height: 100%;
     width: 100%;
@@ -288,4 +295,133 @@ button.reset {
     font-size: 3rem;
     font-family: verdana;
     text-align: center;
+}
+.size-modal {
+    position: absolute;
+    display: none;
+    background-color: #262c3a;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.size-modal h2{
+    font-family: verdana;
+    text-align: center;
+    color: beige;
+    font-size: 2em;
+}
+.size-modal img {
+    width: 50%;
+}
+
+p.description {
+    font-size: 2rem;
+}
+
+@media only screen and (max-width: 1300px){
+    .logo img {
+        width: 35vw;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .header {
+        height: auto;
+    }
+    .logo {
+        width: 45%;
+    }
+    div.title {
+        width: 55%;
+    }
+    .title h1 {
+        font-size: 2rem;
+    }
+    .game-container {
+        /* width: 100%; */
+        height: 80%;
+        padding-top: 10px;
+    }
+    .game-area {
+        width: 90%;
+    }
+    .game-info {
+        /* width: 100%; */
+        height: 0;
+        padding-top: 0;
+        text-align: center;
+    }
+    div.stat-container {
+        display: inline-block;
+        width: 70%;
+    }
+    .games-played, .attempts, .accuracy {
+        font-size: 1.3rem;
+    }
+    button.reset {
+        padding: 3%;
+        width: 20%;
+    }
+    .back-img-info {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 736px){
+    .header {
+        height: auto;
+    }
+    div.logo, div.title {
+        display: block;
+        width: 100%;
+    }
+    div.logo {
+        padding-top: 0;
+    }
+    div.logo img {
+        width: 20%;
+    }
+    div.title {
+        top: 0;
+    }
+    div.title h1 {
+        font-size: 1.5rem;
+        margin-top: 0;
+        padding: 5px;
+    }
+    nav.menu a {
+        font-size: .8rem;
+    }
+    /* .games-played, .attempts, .accuracy {
+        display: inline-block;
+        font-size: 1.8rem;
+        width: 30%;
+        margin-bottom: 0;
+    } */
+    .game-container, .game-area {
+        height: 100%;
+    }
+    .attemptNum, .playedNum, .accuracyNum {
+        font-size: 1.5rem;
+        width: 45%;
+    }
+    button.reset {
+        width: 90%;
+        font-size: 1rem;
+    }
+    .back-img {
+        background-size: contain;
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+    }
+}
+
+@media only screen and (orientation: portrait){
+    .size-modal {
+        display: flex;
+    }
 }

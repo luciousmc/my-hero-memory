@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Memory Match</title>
     <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
-    <!-- <script src="main.js"></script> -->
     <script src="app.js"></script>
     <script src="main.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="size-modal">
+        <img src="images/my_hero_logo.png" alt="My hero Logo">
+        <h2>Please rotate your screen to play the game</h2>
+    </div>
+
     <div class="header">
         <nav class="menu">
             <a href="about.html">About the game</a>
@@ -23,19 +28,21 @@
     </div>
     <div class="game-area-container">
         <div class="game-info">
-            <div class="games-played">
-                <div class="label">Games Played</div>
-                <div class="value"></div>
+            <div class="stat-container">
+                <div class="games-played">
+                    <div class="label">Games Played</div>
+                    <div class="value"></div>
+                </div>
+                <div class="attempts">
+                    <div class="label">Attempts</div>
+                    <div class="value"></div>
+                </div>
+                <div class="accuracy">
+                    <div class="label">Accuracy</div>
+                    <div class="value"></div>
+                </div>
             </div>
-            <div class="attempts">
-                <div class="label">Attempts</div>
-                <div class="value"></div>
-            </div>
-            <div class="accuracy">
-                <div class="label">Accuracy</div>
-                <div class="value"></div>
-            </div>
-            <button class="reset">Reset Game</button>
+            <button class="reset">New Game</button>
         </div>
         <div class="game-container">
             <div class="game-area"></div>
