@@ -300,8 +300,8 @@ button.reset:hover {
     position: absolute;
     display: none;
     background-color: #262c3a;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: 10;
     justify-content: center;
     align-items: center;
@@ -311,7 +311,10 @@ button.reset:hover {
     font-family: verdana;
     text-align: center;
     color: beige;
-    font-size: 4em;
+    font-size: 2em;
+}
+.size-modal img {
+    width: 50%;
 }
 
 p.description {
@@ -325,11 +328,20 @@ p.description {
 }
 
 @media only screen and (max-width: 1000px){
+    .header {
+        height: auto;
+    }
     .logo {
-        padding-top: 3%;
+        width: 45%;
+    }
+    div.title {
+        width: 55%;
+    }
+    .title h1 {
+        font-size: 2rem;
     }
     .game-container {
-        width: 100%;
+        /* width: 100%; */
         height: 80%;
         padding-top: 10px;
     }
@@ -337,20 +349,79 @@ p.description {
         width: 90%;
     }
     .game-info {
-        width: 100%;
+        /* width: 100%; */
         height: 0;
         padding-top: 0;
         text-align: center;
     }
-    .games-played, .attempts, .accuracy {
+    div.stat-container {
         display: inline-block;
-        font-size: 2rem;
+        width: 70%;
+    }
+    .games-played, .attempts, .accuracy {
+        font-size: 1.3rem;
+    }
+    button.reset {
+        padding: 3%;
         width: 20%;
-        margin-bottom: 0;
+    }
+    .back-img-info {
+        display: none;
     }
 }
-/* @media only screen and (orientation: portrait){
+
+@media only screen and (max-width: 736px){
+    .header {
+        height: auto;
+    }
+    div.logo, div.title {
+        display: block;
+        width: 100%;
+    }
+    div.logo {
+        padding-top: 0;
+    }
+    div.logo img {
+        width: 20%;
+    }
+    div.title {
+        top: 0;
+    }
+    div.title h1 {
+        font-size: 1.5rem;
+        margin-top: 0;
+        padding: 5px;
+    }
+    nav.menu a {
+        font-size: .8rem;
+    }
+    /* .games-played, .attempts, .accuracy {
+        display: inline-block;
+        font-size: 1.8rem;
+        width: 30%;
+        margin-bottom: 0;
+    } */
+    .game-container, .game-area {
+        height: 100%;
+    }
+    .attemptNum, .playedNum, .accuracyNum {
+        font-size: 1.5rem;
+        width: 45%;
+    }
+    button.reset {
+        width: 90%;
+        font-size: 1rem;
+    }
+    .back-img {
+        background-size: contain;
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+    }
+}
+
+@media only screen and (orientation: portrait){
     .size-modal {
         display: flex;
     }
-} */
+}

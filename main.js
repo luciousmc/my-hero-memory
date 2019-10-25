@@ -1,9 +1,9 @@
-$(window).resize(responsiveLayout);
+// $(window).resize(responsiveLayout);
 
 $(document).ready(startApp);
 
 function startApp(){
-    responsiveLayout();
+    // responsiveLayout();
     const domElements = {
         dynamicArea: $('.game-area'),
         attemptsDiv: $('.attempts'),
