@@ -222,7 +222,9 @@ button.reset:hover {
     -moz-box-shadow: 10px 5px 5px 10px maroon;
     box-shadow: 0 5px 5px 8px maroon;
 }
-
+.matched:hover {
+    cursor: auto;
+}
 .about-section {
     font-size: 1rem;
     margin: auto;
