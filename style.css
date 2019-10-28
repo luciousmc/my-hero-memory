@@ -208,7 +208,7 @@ button.reset {
     color: #e6e44a;
     display: block;
     font-size: 1.2rem;
-    width: 50%;
+    width: 75%;
     margin: auto;
     padding: 8px;
 }
@@ -361,7 +361,6 @@ p.description {
     }
     button.reset {
         padding: 3%;
-        width: 45%;
     }
 }
 
