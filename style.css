@@ -96,7 +96,6 @@ body {
     height: 90%;
     top: 5%;
     left: 7.5%;
-    transition: .2s
 }
 .allmight-weak, .allmight, .deku, .allmight-weak, .endeavor,
 .ochaco, .shota, .shota-glasses, .todoroki, .tsuyu, .katsuki, .back {
@@ -108,6 +107,16 @@ body {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+}
+.allmight-weak, .allmight, .deku, .allmight-weak, .endeavor,
+.ochaco, .shota, .shota-glasses, .todoroki, .tsuyu, .katsuki {
+    transition: .2s
+}
+.allmight-weak:hover , .allmight:hover, .deku:hover, .allmight-weak:hover, 
+.endeavor:hover, .ochaco:hover, .shota:hover, .shota-glasses:hover,
+.todoroki:hover, .tsuyu:hover, .katsuki:hover, .back:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 .allmight {
     background: url('images/pop_allmight.jpg') #fff no-repeat center/contain;
@@ -159,10 +168,6 @@ body {
 .matched ~ .back{
     display:none;
 }
-.card:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-}
 .back-img, .back-img-info {
     position: absolute;
     opacity: .65;
@@ -198,7 +203,7 @@ body {
     color: yellow;
     text-shadow: 5px 1px 1px gray;
     margin: auto;
-    width: 30%;
+    width: 65%;
     padding: 10px 2px 5px 2px;
     border: 1px solid white;
 }
@@ -218,9 +223,8 @@ button.reset:hover {
     background-color: #f77676
 }
 .matched {
-    -webkit-box-shadow: 10px 5px 5px 10px maroon;
-    -moz-box-shadow: 10px 5px 5px 10px maroon;
-    box-shadow: 0 5px 5px 8px maroon;
+    pointer-events: none;
+    box-shadow: 0 0 5px 5px maroon;
 }
 .matched:hover {
     cursor: auto;
@@ -349,7 +353,6 @@ p.description {
         text-align: center;
     }
     .attemptNum, .playedNum, .accuracyNum{
-        width: 40%;
         font-size: 1.8rem;
     }
     div.stat-container {
@@ -394,7 +397,6 @@ p.description {
     }
     .attemptNum, .playedNum, .accuracyNum {
         font-size: 1.5rem;
-        width: 45%;
     }
     button.reset {
         width: 90%;
