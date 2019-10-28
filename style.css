@@ -330,9 +330,9 @@ p.description {
 }
 
 @media only screen and (max-width: 1000px){
-    .header {
+    /* .header {
         height: auto;
-    }
+    } */
     .logo {
         width: 45%;
     }
@@ -343,18 +343,17 @@ p.description {
         font-size: 2rem;
     }
     .game-container {
-        /* width: 100%; */
-        height: 80%;
-        padding-top: 10px;
+        padding-top: 4%;
     }
     .game-area {
         width: 90%;
     }
     .game-info {
-        /* width: 100%; */
-        height: 0;
-        padding-top: 0;
         text-align: center;
+    }
+    .attemptNum, .playedNum, .accuracyNum{
+        width: 40%;
+        font-size: 1.8rem;
     }
     div.stat-container {
         display: inline-block;
@@ -365,10 +364,7 @@ p.description {
     }
     button.reset {
         padding: 3%;
-        width: 20%;
-    }
-    .back-img-info {
-        display: none;
+        width: 45%;
     }
 }
 
@@ -384,7 +380,7 @@ p.description {
         padding-top: 0;
     }
     div.logo img {
-        width: 20%;
+        width: 30%;
     }
     div.title {
         top: 0;
@@ -397,12 +393,6 @@ p.description {
     nav.menu a {
         font-size: .8rem;
     }
-    /* .games-played, .attempts, .accuracy {
-        display: inline-block;
-        font-size: 1.8rem;
-        width: 30%;
-        margin-bottom: 0;
-    } */
     .game-container, .game-area {
         height: 100%;
     }
