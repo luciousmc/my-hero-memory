@@ -67,6 +67,7 @@ class MemoryMatch {
     }
     addResetButtonClickHandler(){
         $('button.reset').on('click', ()=>{
+            if (this.clicks < 2) return;
             this.resetGame(this.domElements.dynamicArea);
         });
     }
