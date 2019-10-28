@@ -406,6 +406,9 @@ p.description {
         right: 0px;
         bottom: 0px;
     }
+    .back-img-info {
+        display: none;
+    }
 }
 
 @media only screen and (orientation: portrait){
