@@ -80,7 +80,10 @@ class MemoryMatch {
         this.domElements.dynamicArea.on('click', '.card', (event)=>{
             if (this.clickEnabled === false){
                 return;
+            } else if (event.currentTarget.firstChild.className.includes('matched')){
+                return;
             }
+            console.log('the event object: ', event);
             let cardBack = $(event.currentTarget.lastChild);
     
             if (this.firstCard === null){
