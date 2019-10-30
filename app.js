@@ -183,6 +183,7 @@ class MemoryMatch {
     
         container.remove();
         this.dealCards(this.domElements.dynamicArea);
+        $('#winModal').fadeOut(300);
     }
     displayWinModal(){
         $('#winModal').fadeIn();

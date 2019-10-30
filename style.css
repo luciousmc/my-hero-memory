@@ -274,7 +274,7 @@ button.reset:hover {
     z-index: 1;
 }
 .modal-body {
-    height: 60%;
+    /* height: 60%; */
     width: 50%;
     padding: 15px;
     background:#0b634d;
@@ -297,10 +297,23 @@ button.reset:hover {
         background: white;
         color: black;
     }
+.win-img {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.allmight-thumb {
+    width: 50%;
+}
 .modal-text {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-family: verdana;
     text-align: center;
+    margin-bottom: 15px;
+}
+button.replay {
+    margin-top: 15px;
+    width: 30%;
 }
 .size-modal {
     position: absolute;
