@@ -243,13 +243,10 @@ button.reset:hover {
     font-size: 3rem;
 }
 .about-section img {
-    width: 30%;
-    height: 30%;
-
+    width: 20%;
 }
 .about-section p {
     width: 60%;
-    text-align: justify;
     margin: 25px auto;
 }
 .back-img-deku {
@@ -274,7 +271,6 @@ button.reset:hover {
     z-index: 1;
 }
 .modal-body {
-    /* height: 60%; */
     width: 50%;
     padding: 15px;
     background:#0b634d;
@@ -334,10 +330,6 @@ button.replay {
 }
 .size-modal img {
     width: 50%;
-}
-
-p.description {
-    font-size: 2rem;
 }
 
 @media only screen and (max-width: 1300px){
