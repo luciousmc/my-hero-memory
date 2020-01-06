@@ -18,11 +18,3 @@ function startApp(){
     Game.updateAccuracy();
     Game.addEventHandlers();
 }
-function responsiveLayout(){
-    if ($(window).width() < 1000){
-        $('.game-info').insertAfter('.game-container');
-    }
-    else {
-        $('.game-container').insertAfter('.game-info');
-    }
-}
