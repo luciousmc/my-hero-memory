@@ -1,6 +1,6 @@
 @font-face {
     font-family: commando;
-    src: url('resources/commando.ttf')
+    src: url('../resources/commando.ttf')
 }
 body {
     background: #e8e280;
@@ -96,6 +96,7 @@ body {
     height: 90%;
     top: 5%;
     left: 7.5%;
+    cursor: pointer;
 }
 .allmight-weak, .allmight, .deku, .allmight-weak, .endeavor,
 .ochaco, .shota, .shota-glasses, .todoroki, .tsuyu, .katsuki, .back {
@@ -115,38 +116,7 @@ body {
 .allmight-weak:hover , .allmight:hover, .deku:hover, .allmight-weak:hover, 
 .endeavor:hover, .ochaco:hover, .shota:hover, .shota-glasses:hover,
 .todoroki:hover, .tsuyu:hover, .katsuki:hover, .back:hover{
-    cursor: pointer;
     transform: scale(1.1);
-}
-.allmight {
-    background: url('images/pop_allmight.jpg') #fff no-repeat center/contain;
-}
-.allmight-weak {
-    background: url('images/pop_allmight_weak.jpg') #fff no-repeat center/contain;
-}
-.deku {
-    background: url('images/pop_deku.jpg') #fff no-repeat center/contain;
-}
-.katsuki {
-    background: url('images/pop_katsuki.png') #fff no-repeat center/contain;
-}
-.endeavor {
-    background: url('images/pop_endeavor.jpg') #fff no-repeat center/contain;
-}
-.ochaco {
-    background: url('images/pop_ochaco.jpg') #fff no-repeat center/contain;
-}
-.shota {
-    background: url('images/pop_shota.jpg') #fff no-repeat center/contain;
-}
-.shota-glasses {
-    background: url('images/pop_shota_glasses.jpg') #fff no-repeat center/contain;
-}
-.todoroki {
-    background: url('images/pop_todoroki.jpg') #fff no-repeat center/contain;
-}
-.tsuyu {
-    background: url('images/pop_tsuyu.jpg') #fff no-repeat center/contain;
 }
 
 .inside-border {
@@ -162,7 +132,7 @@ body {
 }
 
 .back {
-    background: url('images/cardback_maybe_trans.png') #262c3a no-repeat center center;
+    background: url('../images/cardback_maybe_trans.png') #262c3a no-repeat center center;
     background-size: cover;
 }
 .matched ~ .back{
@@ -176,13 +146,13 @@ body {
     height: 70%;
     width: 20%;
     background-size: cover;
-    background: url('images/background2_allmightrans.png') no-repeat;
+    background: url('../images/background2_allmightrans.png') no-repeat;
     right: 0;
     bottom: 0;
     z-index: -1;
 }
 .back-img-info {
-    background: url('images/background2_katsuki_trans.png') no-repeat top right;
+    background: url('../images/background2_katsuki_trans.png') no-repeat top right;
     -webkit-background-size: cover;
     background-size: cover;
     height: 35%;
@@ -254,7 +224,7 @@ button.reset:hover {
     opacity: .6;
     height: 35%;
     width: 20%;
-    background: url('images/deku_tsuyu_trans.png') no-repeat;
+    background: url('../images/deku_tsuyu_trans.png') no-repeat;
     background-size: cover;
     right: 0;
     bottom: 0;
