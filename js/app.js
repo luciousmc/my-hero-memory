@@ -3,31 +3,31 @@ class MemoryMatch {
     this.domElements = elementsObj;
     this.charData = [{
       name: 'allmight',
-      imgSrc: '/../images/pop_allmight.jpg',
+      imgSrc: 'images/pop_allmight.jpg',
     }, {
       name: 'deku',
-      imgSrc: '/../images/pop_deku.jpg',
+      imgSrc: 'images/pop_deku.jpg',
     }, {
       name: 'katsuki',
-      imgSrc: '/../images/pop_katsuki.png',
+      imgSrc: 'images/pop_katsuki.png',
     }, {
       name: 'endeavor',
-      imgSrc: '/../images/pop_endeavor.jpg',
+      imgSrc: 'images/pop_endeavor.jpg',
     }, {
       name: 'ochaco',
-      imgSrc: '/../images/pop_ochaco.jpg',
+      imgSrc: 'images/pop_ochaco.jpg',
     }, {
       name: 'allmight-weak',
-      imgSrc: '/../images/pop_allmight_weak.jpg',
+      imgSrc: 'images/pop_allmight_weak.jpg',
     }, {
       name: 'shota-glasses',
-      imgSrc: '/../images/pop_shota_glasses.jpg',
+      imgSrc: 'images/pop_shota_glasses.jpg',
     }, {
       name: 'todoroki',
-      imgSrc: '/../images/pop_todoroki.jpg',
+      imgSrc: 'images/pop_todoroki.jpg',
     }, {
       name: 'tsuyu',
-      imgSrc: '/../images/pop_tsuyu.jpg',
+      imgSrc: 'images/pop_tsuyu.jpg',
     }];
 
     // Sets initial variables for stats
