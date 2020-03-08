@@ -10,9 +10,10 @@ function startApp(){
         pPlayed: $('<p>').addClass('playedNum'),
         pAccuracy: $('<p>').addClass('accuracyNum')
     }
-    //Initiate new game and fill stats
+    //Instantiate new game and fill stats
     const Game = new MemoryMatch( domElements );
 
+    // Deal cards and show default stats
     Game.dealCards(domElements.dynamicArea);
     Game.updateAttempt();
     Game.updateAccuracy();
