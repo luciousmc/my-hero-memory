@@ -219,6 +219,9 @@ button.reset:hover {
     width: 60%;
     margin: 25px auto;
 }
+.description {
+    font-size: 1.6rem;
+}
 .back-img-deku {
     position: absolute;
     opacity: .6;
@@ -286,7 +289,7 @@ button.replay {
     display: none;
     background-color: #262c3a;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     z-index: 10;
     justify-content: center;
     align-items: center;
@@ -385,6 +388,9 @@ button.replay {
     }
     .back-img-info {
         display: none;
+    }
+    .about-section p.description {
+        font-size: 2rem;
     }
 }
 
