@@ -118,36 +118,6 @@ body {
     cursor: pointer;
     transform: scale(1.1);
 }
-.allmight {
-    background: url('images/pop_allmight.jpg') #fff no-repeat center/contain;
-}
-.allmight-weak {
-    background: url('images/pop_allmight_weak.jpg') #fff no-repeat center/contain;
-}
-.deku {
-    background: url('images/pop_deku.jpg') #fff no-repeat center/contain;
-}
-.katsuki {
-    background: url('images/pop_katsuki.png') #fff no-repeat center/contain;
-}
-.endeavor {
-    background: url('images/pop_endeavor.jpg') #fff no-repeat center/contain;
-}
-.ochaco {
-    background: url('images/pop_ochaco.jpg') #fff no-repeat center/contain;
-}
-.shota {
-    background: url('images/pop_shota.jpg') #fff no-repeat center/contain;
-}
-.shota-glasses {
-    background: url('images/pop_shota_glasses.jpg') #fff no-repeat center/contain;
-}
-.todoroki {
-    background: url('images/pop_todoroki.jpg') #fff no-repeat center/contain;
-}
-.tsuyu {
-    background: url('images/pop_tsuyu.jpg') #fff no-repeat center/contain;
-}
 
 .inside-border {
     position: relative;
@@ -249,6 +219,9 @@ button.reset:hover {
     width: 60%;
     margin: 25px auto;
 }
+.description {
+    font-size: 1.6rem;
+}
 .back-img-deku {
     position: absolute;
     opacity: .6;
@@ -316,7 +289,7 @@ button.replay {
     display: none;
     background-color: #262c3a;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     z-index: 10;
     justify-content: center;
     align-items: center;
@@ -415,6 +388,9 @@ button.replay {
     }
     .back-img-info {
         display: none;
+    }
+    .about-section p.description {
+        font-size: 2rem;
     }
 }
 
