@@ -6,7 +6,7 @@
 
  My Hero Memory is the classic card game *Memory* set to the theme of the popular anime series *My Hero Academia*.
 
-The game is live and can be played on GitHub [here](https://luciousmc.github.io/my-hero-memory)
+The game is live and can be played at [https://my-hero-memory.marlonclay.com](https://my-hero-memory.marlonclay.com)
 
 ## Technologies Used
 
